@@ -6,20 +6,28 @@
 <h:head>
    <title>Facelet Title</title>
 </h:head>
-<h:body>
+
 
    <f:view>
-      <h:form>
+      <h:body>
+
          <h:dataTable value="#{authorController.authorList}" var="author" border="8" bgcolor="red" cellpadding="10">
             <f:facet name="header">Authors</f:facet>
             <h:column>
-               <h:outputText id="tt" value="#{author.firstname} #{author.lastname}"></h:outputText>
+               <h:outputText  value="#{author.firstname} "></h:outputText>
 
             </h:column>
+
+            <h:column>
+               <h:outputText value=" #{author.lastname}"></h:outputText>
+
+            </h:column>
+
          </h:dataTable>
-      </h:form>
+
+      </h:body>
    </f:view>
 
 
-</h:body>
+
 </html>

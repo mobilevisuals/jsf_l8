@@ -1,6 +1,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -9,13 +10,11 @@ import javax.enterprise.context.Dependent;
  * @author Admin
  */
 @Named(value = "authorController")
-@Dependent
+@RequestScoped
 public class AuthorController implements Serializable{
 
-    private String firstname;
-    private String lastname;
-    private String name;
-    private List<Author> authorList = null;
+
+    private List<Author> authorList;
 
     public List<Author> getAuthorList() {
         return authorList;
@@ -38,29 +37,7 @@ public class AuthorController implements Serializable{
         authorList.add(new Author("Carl", "Deffer"));
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
 
 
